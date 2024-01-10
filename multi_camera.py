@@ -74,8 +74,8 @@ def main():
 
     print("Running...")
     init = sl.InitParameters()
-    init.camera_resolution = sl.RESOLUTION.HD720  # HD720
-    init.camera_fps = 60  # The framerate is lowered to avoid any USB3 bandwidth issues  60 fps only at HD720
+    init.camera_resolution = sl.RESOLUTION.HD2K # either HD720 at 60fps or HD1080 at 30
+    init.camera_fps = 10  # The framerate is lowered to avoid any USB3 bandwidth issues  60 fps only at HD720
 
 
     #List and open cameras
@@ -95,9 +95,9 @@ def main():
         last_ts_list.append(0)
         
         #status = zed_list[index].open(init)
-        path_create = rf'/home/sopho/Videos/Rec_8/Rec'
+        path_create = rf'/home/sopho/Videos/Rec_9/Rec'
         os.makedirs(path_create, exist_ok=True)
-        output_path = os.path.join(rf'/home/sopho/Videos/Rec_8/Rec', f"rec_{index}_{rec_timestamp}.svo")
+        output_path = os.path.join(rf'/home/sopho/Videos/Rec_9/Rec', f"rec_{index}_{rec_timestamp}.svo")
         status = zed_list[index].open(init)
         params = sl.RecordingParameters(video_filename=output_path, compression_mode=sl.SVO_COMPRESSION_MODE.LOSSLESS)
         err = zed_list[index].enable_recording(params)

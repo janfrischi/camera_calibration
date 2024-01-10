@@ -13,7 +13,7 @@ def rotmat_to_RPY_Ros(matrix):
 
     return roll, pitch, yaw
 
-info_folder = "/home/sopho/Videos/Rec_8/calib/info"  # Replace with the path to your info folder
+info_folder = "/home/sopho/Videos/Rec_10/calib/info"  # Replace with the path to your info folder
 
 # Load extrinsics
 extrinsics = cam_params.load_extrinsics(info_folder)

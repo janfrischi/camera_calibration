@@ -181,7 +181,7 @@ extract_recs = True
 init_params = sl.InitParameters()
 init_params.depth_mode = sl.DEPTH_MODE.ULTRA
 
-path = rf'/home/sopho/Videos/Rec_8'
+path = rf'/home/sopho/Videos/Rec_9'
 recs = [os.path.join(path, filename) for filename in os.listdir(path)]
 
 for rec in recs:
@@ -210,4 +210,5 @@ for rec in recs:
         #print(f"Extracted PCs from rec: {svo_file}")
 
     time_paths = [os.path.join(path, rec, svo_file).replace('.svo', '_timestamps.txt') for svo_file in svo_files]
-    time_sync(max_dist_ms=25.0, ts_paths=time_paths, delete_pc=False)
+    # Not necessary for calibration
+    #time_sync(max_dist_ms=25.0, ts_paths=time_paths, delete_pc=False)

@@ -30,7 +30,7 @@ cb_3d[:, :2] = np.mgrid[0:chessboard_size[0], 0:chessboard_size[1]].T.reshape(-1
 cb_3d *= square_size
 
 # iterate through recs
-path = rf'/home/sopho/Videos/Rec_8'
+path = rf'/home/sopho/Videos/Rec_9'
 # Info folder
 info_folder = os.path.join(path, "calib", "info")
 os.makedirs(info_folder, exist_ok=True)
@@ -46,7 +46,7 @@ img_shape = (0, 0)
 # Adaptive Thresholding
 block_sizes = [21, 61, 61]
 test_vis = False
-for svo_idx, svo_file in enumerate(svo_files):
+for svo_idx, svo_file in enumerate(reversed(svo_files)):
     svo_name = svo_file.replace('.svo', '')
     img_folder = os.path.join(path, "calib", "color", svo_name)
     img_paths = [os.path.join(path, "calib", "color", svo_name, img) for img in os.listdir(img_folder)]
