@@ -95,9 +95,9 @@ def main():
         last_ts_list.append(0)
         
         #status = zed_list[index].open(init)
-        path_create = rf'/home/sopho/Videos/Rec_9/Rec'
+        path_create = rf'/home/student/Videos/Rec_1/Rec'
         os.makedirs(path_create, exist_ok=True)
-        output_path = os.path.join(rf'/home/sopho/Videos/Rec_9/Rec', f"rec_{index}_{rec_timestamp}.svo")
+        output_path = os.path.join(rf'/home/student/Videos/Rec_1/Rec', f"rec_{index}_{rec_timestamp}.svo")
         status = zed_list[index].open(init)
         params = sl.RecordingParameters(video_filename=output_path, compression_mode=sl.SVO_COMPRESSION_MODE.LOSSLESS)
         err = zed_list[index].enable_recording(params)
